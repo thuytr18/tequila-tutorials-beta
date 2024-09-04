@@ -251,7 +251,7 @@ cookieconsent.run({
 <h1>A short tutorial on using QTensor class</h1>
 <p><img title="Example of the QTensor Usage" alt="Example" src="qtensor.png" width="600"></p>
 <p>First, let’s take a look at the available simulators:</p>
-<div id="eaff0803" class="cell" data-scrolled="true" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.341412Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.338997Z&quot;}" data-execution_count="16">
+<div id="eaff0803" class="cell" data-scrolled="true" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.277846Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.275524Z&quot;}" data-execution_count="31">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tequila <span class="im">as</span> tq</span>
@@ -273,7 +273,7 @@ qlm             | False      | False      | False      | False     </code></pre>
 </div>
 </div>
 <p>We first create some simple Hamiltonians and tequila objectives to be used as elements in forthcoming examples</p>
-<div id="af834128" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.375539Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.371153Z&quot;}" data-execution_count="17">
+<div id="af834128" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.314922Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.310874Z&quot;}" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hamiltonians</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> tq.paulis.X(<span class="dv">0</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Hz <span class="op">=</span> tq.paulis.Z(<span class="dv">0</span>)</span>
@@ -295,7 +295,7 @@ qlm             | False      | False      | False      | False     </code></pre>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>variables<span class="op">=</span>{<span class="st">'a'</span>:numpy.pi<span class="op">/</span><span class="dv">4</span>, <span class="st">'b'</span>:numpy.pi<span class="op">/</span><span class="dv">3</span>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let us construct QTensors.<br> First suppose we want an array (of objectives) of length 3. We define a QTensor in the following way:</p>
-<div id="a28ea8a9" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.381287Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.379154Z&quot;}" data-execution_count="18">
+<div id="a28ea8a9" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.319280Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.317363Z&quot;}" data-execution_count="33">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>V1 <span class="op">=</span> tq.QTensor(shape<span class="op">=</span>[<span class="dv">3</span>])</span>
@@ -305,7 +305,7 @@ qlm             | False      | False      | False      | False     </code></pre>
 </details>
 </div>
 <p>In the above example, we first initialized a QTensor of <code>shape</code> (3,1). Then, we assigned a tequila objective to each element of the QTensor.<br> Another way of initializing a QTensor is by providing it an objective list (using <code>objective_list</code>) and a <code>shape</code> as follows.</p>
-<div id="cd23a577" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.384760Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.383004Z&quot;}" data-execution_count="19">
+<div id="cd23a577" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.321829Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.320121Z&quot;}" data-execution_count="34">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>V1_ <span class="op">=</span> tq.QTensor(objective_list <span class="op">=</span> [E1,E2,E3], shape<span class="op">=</span>[<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -313,7 +313,7 @@ qlm             | False      | False      | False      | False     </code></pre>
 </div>
 <p>Caution: The elements of <code>objctive_list</code> must be tequila objectives!</p>
 <p>To view the details of the QTensor, we can use <code>print(&lt;QTensor_name&gt;)</code>:</p>
-<div id="dfc0074d" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.388076Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.385627Z&quot;}" data-execution_count="20">
+<div id="dfc0074d" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.325965Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.324001Z&quot;}" data-execution_count="35">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'V1:'</span>,V1)</span>
@@ -334,7 +334,7 @@ types              = not compiled</code></pre>
 </div>
 </div>
 <p>Similarly, we can create matrices and tensors. Note that it is not necessary that the tensor element is a single expectation value. See the following example:</p>
-<div id="a67a44dd" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.391222Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.388883Z&quot;}" data-execution_count="21">
+<div id="a67a44dd" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.329113Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.326771Z&quot;}" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>V2 <span class="op">=</span> tq.QTensor(shape<span class="op">=</span>[<span class="dv">2</span>,<span class="dv">2</span>])</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>V2[<span class="dv">0</span>,<span class="dv">0</span>] <span class="op">=</span> E1</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>V2[<span class="dv">0</span>,<span class="dv">1</span>] <span class="op">=</span> E4</span>
@@ -342,7 +342,7 @@ types              = not compiled</code></pre>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>V2[<span class="dv">1</span>,<span class="dv">1</span>] <span class="op">=</span> E6 <span class="op">+</span> E5.<span class="bu">apply</span>(tq.numpy.square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can similarly create tensors. Below we create a <code>(2,2,2)</code> tensor wich has 8 elements and we fill it using 6 different expectation values</p>
-<div id="e466a873" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.394527Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.392025Z&quot;}" data-execution_count="22">
+<div id="e466a873" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.332652Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.330037Z&quot;}" data-execution_count="37">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>V3 <span class="op">=</span> tq.QTensor(shape<span class="op">=</span>[<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span>
@@ -374,7 +374,7 @@ types              = not compiled</code></pre>
 <section id="compilation-and-simulation" class="level2">
 <h2 class="anchored" data-anchor-id="compilation-and-simulation">Compilation and Simulation</h2>
 <p>We can compile and simulate QTensors in exactly the same way as we compile and simulate objectives.</p>
-<div id="742c5f0e" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.398971Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.395017Z&quot;}" data-execution_count="23">
+<div id="742c5f0e" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.337259Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.333628Z&quot;}" data-execution_count="38">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tq.simulate(V1,variables)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -383,7 +383,7 @@ types              = not compiled</code></pre>
 <pre><code>[ 0.70710678 -0.70710678  0.96592583]</code></pre>
 </div>
 </div>
-<div id="c1a7b6b7" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.427187Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.421573Z&quot;}" data-execution_count="24">
+<div id="c1a7b6b7" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.342192Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.337774Z&quot;}" data-execution_count="39">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>V4 <span class="op">=</span> tq.<span class="bu">compile</span>(V2,variables)</span>
@@ -404,10 +404,10 @@ types              = [&lt;class 'tequila.simulators.simulator_qulacs.BackendExpe
 <section id="applying-transformations-on-qtensors" class="level2">
 <h2 class="anchored" data-anchor-id="applying-transformations-on-qtensors">Applying transformations on QTensors</h2>
 <p>We can apply any operation to the QTensor like we apply to a tequila objective. In the case of QTensors, the function/operation is applied element-wise. For instance</p>
-<div id="5f8c7209" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.429642Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.428208Z&quot;}" data-execution_count="25">
+<div id="5f8c7209" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.344294Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.342764Z&quot;}" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>V5 <span class="op">=</span> V1.<span class="bu">apply</span>(numpy.exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ed06243f" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.437441Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.433804Z&quot;}" data-execution_count="26">
+<div id="ed06243f" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.383082Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.378287Z&quot;}" data-execution_count="41">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(V5)</span>
@@ -421,7 +421,7 @@ types              = not compiled
 [2.02811498 0.49306869 2.62721888]</code></pre>
 </div>
 </div>
-<div id="531db7cc" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.444217Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.439244Z&quot;}" data-execution_count="27">
+<div id="531db7cc" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.389677Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.384800Z&quot;}" data-execution_count="42">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>V6 <span class="op">=</span> V2.<span class="bu">apply</span>(numpy.sin)</span>
@@ -444,7 +444,7 @@ array([['f([a])', 'f([b])'],
 </div>
 </div>
 <p>You can even define your own function and give it as input:</p>
-<div id="988a6e1f" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.450878Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.445122Z&quot;}" data-execution_count="28">
+<div id="988a6e1f" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.398720Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.392291Z&quot;}" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_func(x):</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span>x</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -459,7 +459,7 @@ array([['f([a])', 'f([b])'],
 </div>
 </div>
 <p>Similarly, we can apply gradient function on QTensor. <code>grad</code> is applied on each element of the QTensor</p>
-<div id="f382682d" class="cell" data-scrolled="false" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.475978Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.467424Z&quot;}" data-execution_count="29">
+<div id="f382682d" class="cell" data-scrolled="false" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.408849Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.401710Z&quot;}" data-execution_count="44">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(V6)</span></span>
@@ -493,27 +493,68 @@ types              = not compiled
 </div>
 </div>
 <p>With these QTensors, we can do all the operations that we can with numpy arrays. Some of them are given below:</p>
-<div id="703fdd1b" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T09:54:11.480076Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T09:54:11.477077Z&quot;}" data-execution_count="30">
+<div id="703fdd1b" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.442089Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.437750Z&quot;}" data-execution_count="45">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode python code-annotation-code code-with-copy"><code class="sourceCode python"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a>V8 <span class="op">=</span> V2<span class="op">*</span>V2</span>
-<span id="annotated-cell-15-2"><a href="#annotated-cell-15-2" aria-hidden="true" tabindex="-1"></a>V9 <span class="op">=</span> numpy.dot(V1,V1)</span>
+<div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a>V8 <span class="op">=</span> V2<span class="op">*</span>V2</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="1">1</button><span id="annotated-cell-15-2" class="code-annotation-target"><a href="#annotated-cell-15-2" aria-hidden="true" tabindex="-1"></a>V9 <span class="op">=</span> numpy.dot(V1,V1)</span>
 <span id="annotated-cell-15-3"><a href="#annotated-cell-15-3" aria-hidden="true" tabindex="-1"></a>V10 <span class="op">=</span> numpy.dot(V2,V2)</span>
 <span id="annotated-cell-15-4"><a href="#annotated-cell-15-4" aria-hidden="true" tabindex="-1"></a>V11 <span class="op">=</span> numpy.matmul(V2,V2)</span>
-<span id="annotated-cell-15-5"><a href="#annotated-cell-15-5" aria-hidden="true" tabindex="-1"></a>V12 <span class="op">=</span> numpy.tensordot(V3,V3)</span>
-<span id="annotated-cell-15-6"><a href="#annotated-cell-15-6" aria-hidden="true" tabindex="-1"></a>V13 <span class="op">=</span> tq.QTensor(objective_list <span class="op">=</span> <span class="bu">list</span>(V12.flatten()),shape<span class="op">=</span>V12.shape)</span>
-<span id="annotated-cell-15-7"><a href="#annotated-cell-15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-15-8"><a href="#annotated-cell-15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#print(tq.simulate(V9,variables))</span></span>
-<span id="annotated-cell-15-9"><a href="#annotated-cell-15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#print(type(V10))</span></span>
-<span id="annotated-cell-15-10"><a href="#annotated-cell-15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#print(list(V12.flatten()))</span></span>
-<span id="annotated-cell-15-11"><a href="#annotated-cell-15-11" aria-hidden="true" tabindex="-1"></a><span class="co">#print(type(V12[0,0]))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-15-5"><a href="#annotated-cell-15-5" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="2">2</button><span id="annotated-cell-15-6" class="code-annotation-target"><a href="#annotated-cell-15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tq.simulate(V9,variables))</span>
+<span id="annotated-cell-15-7"><a href="#annotated-cell-15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Type(V10): "</span>)</span>
+<span id="annotated-cell-15-8"><a href="#annotated-cell-15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(V10))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-15" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-15" data-code-lines="2" data-code-annotation="1">Dot product of two arrays:</span>
+</dd>
+<dt data-target-cell="annotated-cell-15" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-15" data-code-lines="6" data-code-annotation="2">Some operations on the results</span>
+</dd>
+</dl>
 </div>
-<p>dot product of two arrays:</p>
-<ol type="1">
-<li>Some operatrions on the results</li>
-</ol>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.9330127018922196
+Type(V10): 
+&lt;class 'tequila.objective.qtensor.QTensor'&gt;</code></pre>
+</div>
+</div>
 <p>However, there is one exception that we found. The <code>tensordot</code> method returns an ndarray rather than a QTensor when acting on QTensor objects. If such an issue occurs, recast as follows:</p>
+<div id="f8b821e1" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.445225Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.443065Z&quot;}" data-execution_count="46">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>V12 <span class="op">=</span> numpy.tensordot(V3,V3)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(V12.flatten()))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(V12[<span class="dv">0</span>,<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[f([a, b]), f([a, b]), f([a, b]), f([a, b])]
+&lt;class 'tequila.objective.objective.Objective'&gt;</code></pre>
+</div>
+</div>
+<div id="ead01da1" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-04T12:24:51.458489Z&quot;,&quot;start_time&quot;:&quot;2024-09-04T12:24:51.447102Z&quot;}" data-execution_count="47">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>V13 <span class="op">=</span> tq.QTensor(objective_list <span class="op">=</span> <span class="bu">list</span>(V12.flatten()),shape<span class="op">=</span>V12.shape)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(V13)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(V13[<span class="dv">0</span>,<span class="dv">1</span>]))</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tq.simulate(V13,variables ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>QTensor of shape (2, 2) with 6 unique expectation values
+total measurements = 6
+variables          = [a, b]
+types              = not compiled
+&lt;class 'tequila.objective.objective.Objective'&gt;
+[[1.25       0.85662583]
+ [3.08137071 3.31042685]]</code></pre>
+</div>
+</div>
 
 
 </section>
