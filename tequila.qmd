@@ -39,4 +39,4 @@ The standard way to contribute is via pull-requests or issues on [github](https:
 
 # Influences
 
-The design of tequilas API was inspired by [madness](https://arxiv.org/abs/1507.01888). Angostic backend handeling and forcing differetiability was inspired by [pennylane](https://arxiv.org/abs/1811.04968v3).  
+The design of tequilas API was inspired by [madness](https://arxiv.org/abs/1507.01888). Agnostic backend handling and forcing differentiability was inspired by [pennylane](https://arxiv.org/abs/1811.04968v3).
