@@ -36,7 +36,7 @@ The main sections of this website are:
 
 # Contribute
 
-Tequila is free an open source. You're welcome to contribute if you have ideas to improve the library.  
+Tequila is free and open source. You're welcome to contribute if you have ideas to improve the library.
 The standard way to contribute is via pull-requests or issues on [github](https://github.com/tequilahub/tequila#how-to-contribute). For larger projects it might be useful to let us know in advance what you are planning.  
 
 # Influences
