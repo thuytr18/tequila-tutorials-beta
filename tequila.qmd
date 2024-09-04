@@ -22,7 +22,7 @@ about:
 Tequila is an abstraction framework for (variational) quantum algorithms.
 It operates on abstract data structures allowing the formulation, combination, automatic differentiation and optimization of generalized objectives. Tequila can execute the underlying quantum expectation values on state of the art simulators as well as on real quantum devices.  
 
-This [blog](index.qmd), contains some hands-on examples using tequila. A good starting point is [here](tutorial/tq-get-started/index.qmd).
+This [blog](index.qmd), contains some hands-on examples using tequila. A good starting point is [here](Tutorials/tq-get-started/index.qmd).
 
 Apart from that, you can find more information here: 
  
