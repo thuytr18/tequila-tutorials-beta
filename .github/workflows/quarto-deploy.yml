@@ -55,7 +55,7 @@ jobs:
       # Publish site to gh-pages
       - name: Publish Quarto site
         run: |
-          quarto publish gh-pages
+          conda run -n BlogQA quarto publish gh-pages
 
       # Notify if compiling fails
       - name: Notify failure

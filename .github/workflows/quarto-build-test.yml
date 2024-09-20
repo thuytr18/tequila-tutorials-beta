@@ -38,7 +38,7 @@ jobs:
       # Compile Quarto site and check for compiling errors
       - name: Check if Quarto site compiles
         run: |
-          quarto render .
+          conda run -n BlogQA quarto render .
 
       # Notify if compiling fails
       - name: Notify failure
