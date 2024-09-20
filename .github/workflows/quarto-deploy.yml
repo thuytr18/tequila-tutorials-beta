@@ -23,13 +23,13 @@ jobs:
         with:
           environment-file: environment.yml
           auto-update-conda: true
-          activate-environment: BlogQA
+          activate-environment: blogqa
 
       # Install the ipykernel package
       - name: Install ipykernel
         run: |
-          conda run -n BlogQA conda install -y ipykernel
-          conda run -n BlogQA python -m ipykernel install --user --name blogqa
+          conda run -n blogqa conda install -y ipykernel
+          conda run -n blogqa python -m ipykernel install --user --name blogqa
 
       # Set up Quarto
       - name: Setup Quarto
