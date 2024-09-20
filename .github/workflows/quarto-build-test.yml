@@ -27,7 +27,7 @@ jobs:
       - name: Install ipykernel
         run: |
           conda run -n BlogQA conda install -y ipykernel
-          conda run -n BlogQA python -m ipykernel install --user --name BlogQA
+          conda run -n BlogQA python -m ipykernel install --user --name blogqa
 
       # Set up Quarto
       - name: Setup Quarto
