@@ -1,1 +1,1 @@
-Sitemap: https://thuytr18.github.io/tequila-tutorials-beta/sitemap.xml
+Sitemap: https://github.com/thuytr18/tequila-tutorials-beta/sitemap.xml

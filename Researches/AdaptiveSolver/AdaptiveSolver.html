@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -87,13 +87,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -102,7 +96,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -129,8 +122,6 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
-  ,
-"language":"en"
   });
 });
 </script> 
@@ -139,38 +130,11 @@ cookieconsent.run({
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Tequila Tutorials - Adaptive Solver">
-<meta property="og:description" content="quantum computing, quantum chemistry and tequila">
-<meta property="og:image" content="https://thuytr18.github.io/tequila-tutorials-beta/Researches/AdaptiveSolver/Preview_AdaptiveSolver.png">
-<meta property="og:site_name" content="Tequila Tutorials">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://github.com/thuytr18/tequila-tutorials-beta/Researches/AdaptiveSolver/Preview_AdaptiveSolver.png">
+<meta property="og:site-name" content="Tequila Tutorials">
 <meta property="og:image:height" content="1792">
 <meta property="og:image:width" content="2486">
 </head>
@@ -178,10 +142,10 @@ window.Quarto = {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../tequila_logo.png" alt="" class="navbar-logo">
     </a>
@@ -196,26 +160,26 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html"> 
-<span class="menu-text">Research</span></a>
+    <a class="nav-link" href="../../research.html" rel="" target="">
+ <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials.html"> 
-<span class="menu-text">Tutorials</span></a>
+    <a class="nav-link" href="../../tutorials.html" rel="" target="">
+ <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../FAQ/FAQ.html"> 
-<span class="menu-text">FAQ</span></a>
+    <a class="nav-link" href="../../FAQ/FAQ.html" rel="" target="">
+ <span class="menu-text">FAQ</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Contribution/Contribution.html"> 
-<span class="menu-text">Contribution</span></a>
+    <a class="nav-link" href="../../Contribution/Contribution.html" rel="" target="">
+ <span class="menu-text">Contribution</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -269,11 +233,10 @@ window.Quarto = {
   <li><a href="#acceleration-with-multiprocessing" id="toc-acceleration-with-multiprocessing" class="nav-link" data-scroll-target="#acceleration-with-multiprocessing">Acceleration with multiprocessing</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/tequilahub/tequila/blob/main/Researches/AdaptiveSolver/AdaptiveSolver.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/tequilahub/tequila/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/tequilahub/tequila/blob/main/Researches/AdaptiveSolver/AdaptiveSolver.ipynb" class="toc-action">View source</a></p><p><a href="https://github.com/tequilahub/tequila/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
-
 
 
 
@@ -289,7 +252,7 @@ See: <a href="https://doi.org/10.1039/D0SC06627C">doi.org/10.1039/D0SC06627C</a>
 <p>In order to execute this tutorial properly you need to: - checkout the <code>devel</code> branch of tequila (the adapt solver is not yet part of the main branch):<br>
 <code>pip install git+https://github.com/aspuru-guzik-group/tequila/tree/devel.git</code> - have <code>qpic</code> installed to display the circuits: <code>pip install qpic</code></p>
 <p>General introduction to <code>tequila</code> and it’s chemistry modules can be found in separate tutorials: - Basic usace of <code>tequila</code>: <a href="https://github.com/aspuru-guzik-group/tequila-tutorials/blob/main/BasicUsage.ipynb">BasicUsage</a> - Basics with tequila, psi4 and our automatically differentiable framework: <a href="https://github.com/aspuru-guzik-group/tequila-tutorials/blob/main/Chemistry.ipynb">Chemistry.ipynb</a> - Another example for an excited state solver (same principle, less abstraction): <a href="https://github.com/aspuru-guzik-group/tequila-tutorials/blob/main/ChemistryExcitedState.ipynb">ChemistryExcitedState.ipynb</a> - Basics of our basis-set-free <code>madness</code> interface, that can be used with the adaptive solvers here as well: <a href="https://github.com/aspuru-guzik-group/tequila-tutorials/blob/main/ChemistryMadnessInterface.ipynb">ChemistryMadnessInterface.ipynb</a></p>
-<div id="cell-3" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:20.048414Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:20.043611Z&quot;}" data-execution_count="15">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:20.048414Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:20.043611Z&quot;}" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tequila <span class="im">as</span> tq</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span>
@@ -304,8 +267,8 @@ See: <a href="https://doi.org/10.1039/D0SC06627C">doi.org/10.1039/D0SC06627C</a>
 </div>
 <p><img src="fig1.png" class="img-fluid" style="width:25.0%"></p>
 <p>Note that circuits will be represented by their generator in primitive Pauli Rotations so the picture above represents <span class="math display">\[e^{-i\frac{\theta}{2} \sigma_x(0) \sigma_y(2)} \equiv e^{-i\frac{\theta}{2} X(0) Y(2)}\]</span></p>
-<div id="cell-5" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:25.368767Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:25.364981Z&quot;}" data-execution_count="16">
-<details class="code-fold">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:25.368767Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:25.364981Z&quot;}" data-execution_count="16">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># failsafe</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
@@ -322,7 +285,7 @@ Of course one would not need an adaptive solver for this, but it executes fast!<
 <p>For the adaptive part, we construct an operator pool consisting of the operations: <span class="math display">\[ \text{operator\_pool} = \left\{ e^{-i\frac{\theta}{2} X}, e^{-i\frac{\theta}{2} Y}, e^{-i\frac{\theta}{2} Z} \right\} \]</span> In the code block, the operator_pool is initialized over it’s generators (here: <span class="math inline">\(X,Y,Z\)</span>).</p>
 <p>The target will be to minimize the expectation value over <span class="math inline">\(X\)</span>: <span class="math display">\[ \min_{\boldsymbol{\theta}} \langle X \rangle_{U_{\text{Post}}U_{\text{Adapt}(\boldsymbol{\theta})}U_{\text{Pre}}}\]</span></p>
 <p>After the adapt solver is initialized, it can be called. The usual keywords for quantum backend and optimizer can be passed at construction of the solver via <code>compiler_args={backend="qiskit", samples=1000}</code> and <code>optimizer_args={method="bfgs"}</code>. Note that they are repeated when the solver starts and that the other parameters can be changed as well by just passing name at initialization as <code>key=value</code>.</p>
-<div id="cell-7" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:31.491787Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:31.460851Z&quot;}" data-execution_count="17">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:31.491787Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:31.460851Z&quot;}" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> tq.paulis.X(<span class="dv">0</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Upre <span class="op">=</span> tq.gates.X(<span class="dv">0</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Upost <span class="op">=</span> tq.gates.Y(<span class="dv">0</span>)</span>
@@ -360,7 +323,7 @@ pool gradient norm is +0.00000000, convergence criterion met</code></pre>
 Note that the adaptive solver gives you back the circuit part that was adaptively constructed.<br>
 So in order to get the full circuit with Pre and Post part, you need to assemble it yourself.<br>
 This makes it easier for cases, where Pre and Post are only used for the optimization.</p>
-<div id="cell-9" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:58.583986Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:58.580724Z&quot;}" data-execution_count="18">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:04:58.583986Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:04:58.580724Z&quot;}" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>final_circuit <span class="op">=</span> Upre <span class="op">+</span> result.U <span class="op">+</span> Upost</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#show(final_circuit, width=200)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -372,7 +335,7 @@ This makes it easier for cases, where Pre and Post are only used for the optimiz
 <p>In principle, we could use the standard operator_pool from before, and change the generators accordingly (<code>mol.make_excitation_generator</code>).<br>
 Is is however better to initialize those gates directly (<code>mol.make_excitation_gate</code>), so that tequila can exploit the fermionic information and the optimized gradient framework from <a href="https://doi.org/10.1039/D0SC06627C">doi.org/10.1039/D0SC06627C</a> can be applied.</p>
 <p>In the <code>MolecularPool</code> this is automatized. The pool can be constructed by handing spin-orbital indices that describe electronic excitations. One example would be <code>operator_pool = [((0,2),(1,3)), ((0,2)), ((1,3))]</code> that holds one double excitation (electrons from spin orbitals 0 and 1 are excited to 2 and 3, and vice versa) and two single excitations. For convenience UpCCGSD style pools can be constructed (UpCCD, UpCCSD, UpCCGD, UpCCGSD) by a string keyword.</p>
-<div id="cell-11" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:03.359080Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:03.182511Z&quot;}" data-execution_count="19">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:03.359080Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:03.182511Z&quot;}" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mol <span class="op">=</span> tq.Molecule(geometry<span class="op">=</span><span class="st">"He 0.0 0.0 0.0"</span>, basis_set<span class="op">=</span><span class="st">"6-31G"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>operator_pool <span class="op">=</span> tq.adapt.MolecularPool(molecule<span class="op">=</span>mol, indices<span class="op">=</span><span class="st">"UpCCSD"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> tq.adapt.Adapt(H<span class="op">=</span>mol.make_hamiltonian(), Upre<span class="op">=</span>mol.prepare_reference(), operator_pool<span class="op">=</span>operator_pool)</span>
@@ -420,7 +383,7 @@ pool gradient norm is +0.00000230, convergence criterion met</code></pre>
 <section id="the-same-ground-state-with-fixed-post-circuit" class="level2">
 <h2 class="anchored" data-anchor-id="the-same-ground-state-with-fixed-post-circuit">The Same Ground State with fixed Post circuit</h2>
 <p>The adaptive run before, did not include single excitations (gradients are below the default thresholds for this ground state). Here we add them fixed as Post circuit as an example. You will observe that the energy does not really change through them in this case.</p>
-<div id="cell-13" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:08.681404Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:08.657183Z&quot;}" data-execution_count="20">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:08.681404Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:08.657183Z&quot;}" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mol <span class="op">=</span> tq.Molecule(geometry<span class="op">=</span><span class="st">"He 0.0 0.0 0.0"</span>, basis_set<span class="op">=</span><span class="st">"6-31G"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Upost <span class="op">=</span> mol.make_excitation_gate(angle<span class="op">=</span><span class="st">"a"</span>, indices<span class="op">=</span>[(<span class="dv">0</span>,<span class="dv">2</span>)])</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Upost <span class="op">+=</span> mol.make_excitation_gate(angle<span class="op">=</span><span class="st">"a"</span>, indices<span class="op">=</span>[(<span class="dv">1</span>,<span class="dv">3</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -431,7 +394,7 @@ pool gradient norm is +0.00000230, convergence criterion met</code></pre>
 You can keep them static by passing for example <code>static_variables={"a":1.0}</code>.</p>
 <p>The default starting value is 0.0, you can change that by passing <code>variables={"a":1.0}</code>.</p>
 <p>Here, we pass both with <code>None</code> (which is the default) to illustrate where they go.</p>
-<div id="cell-15" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:13.725142Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:13.585565Z&quot;}" data-execution_count="21">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:13.725142Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:13.585565Z&quot;}" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>operator_pool <span class="op">=</span> tq.adapt.MolecularPool(molecule<span class="op">=</span>mol, indices<span class="op">=</span><span class="st">"UpCCSD"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> tq.adapt.Adapt(H<span class="op">=</span>mol.make_hamiltonian(),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                        Upre<span class="op">=</span>mol.prepare_reference(),</span>
@@ -480,7 +443,7 @@ We will stay in the 2-electron sector, since our UCC excitations can not break p
 <p>See <a href="https://doi.org/10.1039/D0SC06627C">doi.org/10.1039/D0SC06627C</a> and its appendix for a more detailed derivation of the objective.</p>
 <p>Here the objective is constructed automatically in the <code>ObjectiveFactorySequentialExcitedState</code> object.<br>
 If you want to create your own objective factory: Just look at the source code of that object. In principle, you can pass any object as <code>objective_factory</code> that produces a <code>tequila</code> objective when given a <code>tequila</code> circuit. This is also how it is used within the adapt solver.</p>
-<div id="cell-17" class="cell" data-scrolled="true" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:28.901797Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:27.273638Z&quot;}" data-execution_count="22">
+<div class="cell" data-scrolled="true" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:28.901797Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:27.273638Z&quot;}" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mol <span class="op">=</span> tq.Molecule(geometry<span class="op">=</span><span class="st">"He 0.0 0.0 0.0"</span>, basis_set<span class="op">=</span><span class="st">"6-31G"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>operator_pool <span class="op">=</span> tq.adapt.MolecularPool(molecule<span class="op">=</span>mol, indices<span class="op">=</span><span class="st">"UpCCSD"</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -612,7 +575,7 @@ pool gradient norm is +0.00032132, convergence criterion met</code></pre>
 </div>
 </div>
 <p>Let’s take a look at the states we found:</p>
-<div id="cell-19" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:32.317689Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:32.283152Z&quot;}" data-execution_count="23">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:05:32.317689Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:05:32.283152Z&quot;}" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> mol.make_hamiltonian()</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> U <span class="kw">in</span> circuits:</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    energy <span class="op">=</span> tq.simulate(tq.ExpectationValue(H<span class="op">=</span>H, U<span class="op">=</span>U), variables<span class="op">=</span>variables)</span>
@@ -626,7 +589,7 @@ energy = +0.6086, wfn= +0.0654|1100&gt; -0.0391|0110&gt; +0.0391|1001&gt; +0.996
 </div>
 <p>Lets diagonalize the Hamiltonian with numpy and check if we really found eigenstates We will only display states that have overlap with our reference wavefunction (<span class="math inline">\(\lvert 110000....0\rangle = \lvert 2^{N_q -1} + 2^{N_q -2} \rangle\)</span>)<br>
 in order to not have too much output here</p>
-<div id="cell-21" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:06:03.612042Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:06:03.582493Z&quot;}" data-execution_count="24">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-09-03T15:06:03.612042Z&quot;,&quot;start_time&quot;:&quot;2024-09-03T15:06:03.582493Z&quot;}" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>eigenvalues, eigenvectors <span class="op">=</span> numpy.linalg.eigh(H.to_matrix())</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>n_qubits <span class="op">=</span> H.n_qubits</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>reference_basis_state <span class="op">=</span> <span class="dv">2</span><span class="op">**</span>(n_qubits<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> <span class="dv">2</span><span class="op">**</span>(n_qubits<span class="op">-</span><span class="dv">2</span>)</span>
@@ -653,7 +616,7 @@ energy = 0.6086, wfn =  -0.9963|0011&gt; +0.0391|0110&gt; -0.0391|1001&gt; -0.06
 <h2 class="anchored" data-anchor-id="acceleration-with-multiprocessing">Acceleration with multiprocessing</h2>
 <p>You can speed up the screening procedure with multiprocessing (not however, that depending on which backend it is, the quantum backend will also use multiprocessing – so it is advised to balance the multiprocessing worker threads with <code>OMP_NUM_THREADS</code>). Here is the last example with multiprocessing and 2 threads. Note that you need to create a <code>Psi4</code> independent molecule object in order to make it suitable for multiprocessing.</p>
 <p>We advise not to execute the cell in a jupyter notebook!</p>
-<div id="cell-25" class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">False</span>: <span class="co"># let's not execute this here</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> tequila <span class="im">as</span> tq</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> multiprocessing <span class="im">as</span> mp</span>
@@ -736,33 +699,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -829,15 +765,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -967,27 +901,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/thuytr18\.github\.io\/tequila-tutorials-beta\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -997,17 +914,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1019,130 +927,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1186,7 +971,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1212,32 +996,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1305,15 +1063,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">
-
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tequilahub/tequila/blob/main/Researches/AdaptiveSolver/AdaptiveSolver.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/tequilahub/tequila/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-
 
 
 
