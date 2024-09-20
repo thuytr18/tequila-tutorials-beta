@@ -1,0 +1,43 @@
+name: Quarto Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository and all branches
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Set up Quarto
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 'latest'
+
+      # Commit changes to gh-pages branch
+      - name: Switch to gh-pages branch
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git checkout gh-pages
+          git reset --hard
+          git commit --allow-empty -m "Updating gh-pages branch"
+          git push origin gh-pages
+
+      # Switch back to main branch
+      - name: Switch back to main branch
+        run: |
+          git checkout main
+
+      # Publish site to gh-pages
+      - name: Publish Quarto site
+        run: |
+          quarto publish gh-pages
