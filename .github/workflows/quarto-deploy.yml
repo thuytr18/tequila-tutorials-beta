@@ -28,6 +28,7 @@ jobs:
       # Install the ipykernel package
       - name: Install ipykernel
         run: |
+          source activate BlogQA
           conda install ipykernel
           python -m ipykernel install --user --name BlogQA
 
