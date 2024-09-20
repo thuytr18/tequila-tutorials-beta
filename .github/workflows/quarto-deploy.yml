@@ -20,7 +20,7 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 'latest'
+          version: '1.3.450'
 
       # Commit changes to gh-pages branch
       - name: Switch to gh-pages branch
