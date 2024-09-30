@@ -2,15 +2,9 @@
 title: "Tequila Basics: Getting Started"
 author:
     - name: Jakob Kottmann
-date: "2022-11-03"
 categories: [code]
-image: tq-basics-pic.png
 format:
-    html:
         code-fold: false
-        eval: true
-jupyter: blogqa
----
 
 
 Tequila is a versatile framework for the development and execution of (variational) quantum algorithms. 
@@ -24,7 +18,6 @@ As you can see, the underlying functionalities are implemented at a very high-le
 
 <center>
 ![](tq-basics-pic.png){width=400}
-</center>
 
 
 # Installation
@@ -138,7 +131,6 @@ plt.plot(x,y1, label=r"$\frac{\partial L}{\partial a}(a)$", color="tab:red")
 plt.legend()
 plt.savefig("fig.png")
 plt.show()
-```
     
 
 
