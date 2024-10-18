@@ -1,7 +1,7 @@
 ---
-title: "Eigensolver"
+title: "Excited State Methods"
 author: "Elisabeth Welizky"
-image: "Original_Hamiltonian.png"
+image: "main_image.png"
 date: "2024-10-15"
 categories: [mra, code]
 format:
