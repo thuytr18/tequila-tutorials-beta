@@ -181,7 +181,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Eigensolver},
+  pdftitle={Excited State Methods},
   pdfauthor={Elisabeth Welizky},
   colorlinks=true,
   linkcolor={blue},
@@ -190,7 +190,7 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Eigensolver}
+\title{Excited State Methods}
 \author{Elisabeth Welizky}
 \date{2024-10-15}
 
@@ -803,6 +803,7 @@ corresponding 1D or 2D diagrams.
 \NormalTok{        ax.set\_ylabel(}\StringTok{\textquotesingle{}Angle "b"\textquotesingle{}}\NormalTok{)}
 \NormalTok{        ax.set\_zlabel(}\StringTok{\textquotesingle{}Energy\textquotesingle{}}\NormalTok{)}
 \NormalTok{        ax.legend()}
+\NormalTok{        ax.set\_title(}\BuiltInTok{str}\NormalTok{(aprox\_name))}
 \NormalTok{        plt.show()}
 
     \KeywordTok{def}\NormalTok{ plotting\_preparation(E, result, aprox\_name, eigenvalues, oneDimensional}\OperatorTok{=}\VariableTok{True}\NormalTok{):}
