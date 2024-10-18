@@ -19,7 +19,7 @@ It provides a high-level abstraction that allows users to easily formulate, comb
 With built-in support for automatic differentiation, Tequila simplifies the process of refining these objectives. 
 The framework is compatible with both state-of-the-art quantum simulators and real quantum hardware, allowing seamless execution across platforms.
 
-The following image showcases the creation some abstract quantum functions with tequila.
+The following image showcases the creation of some abstract quantum functions with tequila.
 As you can see, the underlying functionalities are implemented at a very high-level manner, such that the required inputs for function calls are more of less strightforward mathematical expressions.
 
 <center>
