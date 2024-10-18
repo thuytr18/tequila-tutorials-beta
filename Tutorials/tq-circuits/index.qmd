@@ -32,7 +32,7 @@ Quantum circuits can be initialized in an intuitive way by assembling `tq.gates`
 import tequila as tq
 U = tq.gates.Ry(target=0, angle=1.0) + tq.gates.X(control=0,target=1)
 ``` 
-which intializes a two-qubit circuit with a Y-rotation and a controlled-NOT operation in sequence.
+which initializes a two-qubit circuit with a Y-rotation and a controlled-NOT operation in sequence.
 All tequila gates can be initialized with the following keywords  
        
 - `target`: the target qubit(s) | integer or list of integers   
